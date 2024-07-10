@@ -40,6 +40,7 @@ class _FormNotesState extends State<FormNotes> {
               InputField(
                 title: 'Descripción',
                 control: descriptionController,
+                maxLines: 5,
               ),
               ButtonField(onPressed: () => addNote())
             ],

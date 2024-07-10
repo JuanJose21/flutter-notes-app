@@ -3,25 +3,30 @@ import 'package:flutter/material.dart';
 class CardNotes extends StatelessWidget {
   final String title;
   final String subtitle;
-  final VoidCallback? onPressed;
   final VoidCallback? onTap;
 
   const CardNotes({
     super.key,
     required this.title,
     this.subtitle = '',
-    this.onPressed,
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title),
-      onTap: onTap,
-      trailing: IconButton(
-        icon: const Icon(Icons.delete),
-        onPressed: onPressed,
+    return Card(
+      elevation: 5,
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      child: ListTile(
+        tileColor: Colors.grey[200],
+        selectedColor: Colors.grey[300],
+        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+        subtitle: Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis),
+        onTap: onTap,
+        trailing: IconButton(
+          icon: const Icon(Icons.arrow_right),
+          onPressed: onTap,
+        ),
       ),
     );
   }

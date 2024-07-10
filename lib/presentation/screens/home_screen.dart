@@ -19,8 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final notesProvider = context.watch<NotesProvider>();
 
-    void navigateCard() {
-      Navigation.navigateTo(context, const DetailScreen());
+    void navigateCard(String id) {
+      Navigation.navigateTo(context, DetailScreen(idNote: id));
     }
 
     void navigateCreateNote() {
@@ -44,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         final note = notesProvider.notes[index];
                         return CardNotes(
                           title: note['title']!,
-                          onPressed: () => notesProvider.remove(note['id']!),
-                          onTap: () => navigateCard(),
+                          subtitle: note['description']!,
+                          onTap: () => navigateCard(note['id']!),
                         );
                       },
                     ),
