@@ -7,6 +7,7 @@ class NotesProvider extends ChangeNotifier {
 
   void add(String title, String description) {
     _notes.add({
+      'id': DateTime.now().toString(),
       'title': title,
       'description': description,
     });
