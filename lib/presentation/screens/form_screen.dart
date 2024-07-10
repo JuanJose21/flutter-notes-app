@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_notes_app/presentation/widgets/form/form_notes.dart';
 
 class FormScreen extends StatelessWidget {
-  const FormScreen({super.key});
+  final String idNote;
+  const FormScreen({super.key, this.idNote = ''});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Formulario'),
+        title: Text(idNote.isNotEmpty ? 'Editar nota' : 'Crear nota'),
       ),
-      body: const Center(
-        child: FormNotes(),
+      body: Center(
+        child: FormNotes(idNote: idNote),
       ),
     );
   }

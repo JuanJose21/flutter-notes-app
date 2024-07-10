@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_notes_app/presentation/providers/notes_provider.dart';
+import 'package:flutter_notes_app/presentation/screens/form_screen.dart';
+import 'package:flutter_notes_app/utils/navigation.dart';
+import 'package:provider/provider.dart';
 
 class DetailScreen extends StatelessWidget {
   final String idNote;
@@ -9,12 +13,46 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final notesProvider = context.watch<NotesProvider>();
+    final note = notesProvider.getNote(idNote);
+
+    if (note.isEmpty) {
+      Future.delayed(Duration.zero, () async {
+        Navigation.navigateBack(context);
+      });
+    }
+
+    void navigateEditNote() {
+      Navigation.navigateTo(context, FormScreen(idNote: idNote));
+    }
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detail'),
+        title: Text(note['title'] ?? '',
+            style: const TextStyle(fontWeight: FontWeight.bold)),
+        actions: [
+          IconButton(
+            onPressed: () => notesProvider.remove(idNote),
+            icon: Icon(
+              Icons.delete,
+              color: Colors.red[300],
+            ),
+          )
+        ],
       ),
-      body: const Center(
-        child: Text('Detail Screen'),
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(children: [
+          Text(note['description'] ?? '',
+              textAlign: TextAlign.left,
+              style: const TextStyle(
+                fontSize: 15,
+              ))
+        ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => navigateEditNote(),
+        child: const Icon(Icons.edit_document),
       ),
     );
   }

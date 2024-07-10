@@ -20,7 +20,12 @@ class CardNotes extends StatelessWidget {
       child: ListTile(
         tileColor: Colors.grey[200],
         selectedColor: Colors.grey[300],
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(
+          title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
         subtitle: Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis),
         onTap: onTap,
         trailing: IconButton(

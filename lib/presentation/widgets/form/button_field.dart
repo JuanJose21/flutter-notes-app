@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class ButtonField extends StatelessWidget {
   final VoidCallback? onPressed;
+  final String text;
 
   const ButtonField({
     super.key,
     this.onPressed,
+    this.text = 'Guardar',
   });
 
   @override
@@ -19,7 +21,7 @@ class ButtonField extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             backgroundColor: Colors.orange[100]),
-        child: const Text('Agregar'),
+        child: Text(text),
       ),
     );
   }
