@@ -1,16 +1,55 @@
-# flutter_notes_app
+# Notas App
 
-A new Flutter project.
+Esta aplicación de notas permite a los usuarios crear, editar y gestionar notas de manera sencilla y rápida. Cada nota requiere únicamente un título y una descripción.
 
-## Getting Started
+## Características
 
-This project is a starting point for a Flutter application.
+- **Característica 1**: Home donde se listan todas las notas.
+- **Característica 2**: Formulario para crear o actualizar notas.
+- **Característica 3**: Descripción de cada nota.
 
-A few resources to get you started if this is your first Flutter project:
+## Requisitos
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter: Versión `3.22.2`
+- Dart: Versión `3.4.3`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Instalación
+
+Sigue estos pasos para configurar y ejecutar la aplicación:
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/JuanJose21/flutter-notes-app.git
+   ```
+
+2. Navega al directorio del proyecto:
+
+   ```bash
+   cd flutter-notes-app
+   ```
+
+3. Instala las dependencias:
+
+   ```bash
+   flutter pub get
+   ```
+
+4. Ejecuta la aplicación:
+
+   ```bash
+   flutter run
+   ```
+
+## Uso
+
+En el home encontrarás un listado de las notas creadas, para crear una nota nueva lo haces por medio del botón ubicado en la parte inferior derecha del Home. El formulario para crear la nota solo te pedirá título y descripción (ambos son obligatorios), luego de creada la nota se te va a redirigir al home donde ya puedes ver la nota creada.
+Si le das click o tap a la nota te va a llevar a la pantalla donde puedes ver toda la información de la nota, también tienes un botón en donde la puedes eliminar y uno para editarla. En caso de eliminarla te va a devolver al Home luego de hacer la eliminación; en caso de actualizar te llevara al formulario donde puedes cambiar el título o la descripción.
+
+## Estructura del Proyecto
+
+En la carpeta lib encontrarás la estructura del proyecto:
+En el archivo main encontrarás las configuraciones iniciales para el proyecto.
+En la carpeta utils, encontrarás utilidades importantes, como lo puede ser configuración para la navegación del proyecto
+En la carpeta presentation, encontrarás los widgets que son utilizados a lo largo de la app, las pantallas y providers que es donde manejamos el estado de la aplicación.
+Para manejar el estado de las notas se usa la librería provider 6.1.2
