@@ -46,10 +46,12 @@ Sigue estos pasos para configurar y ejecutar la aplicación:
 En el home encontrarás un listado de las notas creadas, para crear una nota nueva lo haces por medio del botón ubicado en la parte inferior derecha del Home. El formulario para crear la nota solo te pedirá título y descripción (ambos son obligatorios), luego de creada la nota se te va a redirigir al home donde ya puedes ver la nota creada.
 Si le das click o tap a la nota te va a llevar a la pantalla donde puedes ver toda la información de la nota, también tienes un botón en donde la puedes eliminar y uno para editarla. En caso de eliminarla te va a devolver al Home luego de hacer la eliminación; en caso de actualizar te llevara al formulario donde puedes cambiar el título o la descripción.
 
+https://github.com/JuanJose21/flutter-notes-app/assets/36199607/4314ecb1-b097-4345-b496-72f30858da1c
+
 ## Estructura del Proyecto
 
 En la carpeta lib encontrarás la estructura del proyecto:
 En el archivo main encontrarás las configuraciones iniciales para el proyecto.
 En la carpeta utils, encontrarás utilidades importantes, como lo puede ser configuración para la navegación del proyecto
 En la carpeta presentation, encontrarás los widgets que son utilizados a lo largo de la app, las pantallas y providers que es donde manejamos el estado de la aplicación.
-Para manejar el estado de las notas se usa la librería provider 6.1.2
+Para manejar el estado de las notas se usa la librería provider 6.1.2
