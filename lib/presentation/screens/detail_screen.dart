@@ -5,11 +5,12 @@ import 'package:flutter_notes_app/utils/navigation.dart';
 import 'package:provider/provider.dart';
 
 class DetailScreen extends StatelessWidget {
-  final String idNote;
   const DetailScreen({
     super.key,
     required this.idNote,
   });
+
+  final String idNote;
 
   @override
   Widget build(BuildContext context) {

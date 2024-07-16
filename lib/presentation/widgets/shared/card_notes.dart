@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CardNotes extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final VoidCallback? onTap;
-
   const CardNotes({
     super.key,
     required this.title,
     this.subtitle = '',
     this.onTap,
   });
+
+  final String title;
+  final String subtitle;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

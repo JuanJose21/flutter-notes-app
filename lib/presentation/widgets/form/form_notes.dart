@@ -5,8 +5,9 @@ import 'package:flutter_notes_app/presentation/widgets/form/input_field.dart';
 import 'package:provider/provider.dart';
 
 class FormNotes extends StatefulWidget {
-  final String idNote;
   const FormNotes({super.key, this.idNote = ''});
+
+  final String idNote;
 
   @override
   State<FormNotes> createState() => _FormNotesState();

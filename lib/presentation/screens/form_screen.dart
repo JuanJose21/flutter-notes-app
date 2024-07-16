@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_notes_app/presentation/widgets/form/form_notes.dart';
 
 class FormScreen extends StatelessWidget {
-  final String idNote;
   const FormScreen({super.key, this.idNote = ''});
+
+  final String idNote;
 
   @override
   Widget build(BuildContext context) {

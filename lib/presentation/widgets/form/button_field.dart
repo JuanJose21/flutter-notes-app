@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ButtonField extends StatelessWidget {
-  final VoidCallback? onPressed;
-  final String text;
-
   const ButtonField({
     super.key,
     this.onPressed,
     this.text = 'Guardar',
   });
+
+  final VoidCallback? onPressed;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
