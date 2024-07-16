@@ -25,8 +25,8 @@ class _FormNotesState extends State<FormNotes> {
 
     if (isEdit) {
       final note = notesProvider.getNote(widget.idNote);
-      titleController.text = note['title']!;
-      descriptionController.text = note['description']!;
+      titleController.text = note.title;
+      descriptionController.text = note.description;
     }
 
     void addOrEditNote() {

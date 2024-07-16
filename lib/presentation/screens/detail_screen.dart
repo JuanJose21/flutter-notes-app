@@ -17,7 +17,7 @@ class DetailScreen extends StatelessWidget {
     final notesProvider = context.watch<NotesProvider>();
     final note = notesProvider.getNote(idNote);
 
-    if (note.isEmpty) {
+    if (note.id == '') {
       Future.delayed(Duration.zero, () async {
         Navigation.navigateBack(context);
       });
@@ -29,7 +29,7 @@ class DetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(note['title'] ?? '',
+        title: Text(note.title,
             style: const TextStyle(fontWeight: FontWeight.bold)),
         actions: [
           IconButton(
@@ -44,7 +44,7 @@ class DetailScreen extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(20),
         child: Column(children: [
-          Text(note['description'] ?? '',
+          Text(note.description,
               textAlign: TextAlign.left,
               style: const TextStyle(
                 fontSize: 15,

@@ -43,9 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemBuilder: (context, index) {
                         final note = notesProvider.notes[index];
                         return CardNotes(
-                          title: note['title']!,
-                          subtitle: note['description']!,
-                          onTap: () => navigateCard(note['id']!),
+                          title: note.title,
+                          subtitle: note.description,
+                          onTap: () => navigateCard(note.id),
                         );
                       },
                     ),
