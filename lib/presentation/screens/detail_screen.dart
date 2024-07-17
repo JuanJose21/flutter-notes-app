@@ -17,6 +17,7 @@ class DetailScreen extends StatelessWidget {
     final notesProvider = context.watch<NotesProvider>();
     final note = notesProvider.getNote(idNote);
 
+    // Si la nota no tiene id, es porque se ha eliminado y se redirige a la pantalla anterior
     if (note.id == '') {
       Future.delayed(Duration.zero, () async {
         Navigation.navigateBack(context);

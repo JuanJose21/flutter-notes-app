@@ -23,12 +23,16 @@ class _FormNotesState extends State<FormNotes> {
     final notesProvider = context.watch<NotesProvider>();
     final bool isEdit = widget.idNote.isNotEmpty;
 
+    // Si se está editando, se rellenan los campos con los datos de la nota
     if (isEdit) {
       final note = notesProvider.getNote(widget.idNote);
       titleController.text = note.title;
       descriptionController.text = note.description;
     }
 
+    /// Método para añadir o editar una nota
+    /// Si se está editando, se actualiza la nota
+    /// Si no, se añade una nueva nota y se redirige a la pantalla anterior
     void addOrEditNote() {
       if (!_formKey.currentState!.validate()) return;
 
